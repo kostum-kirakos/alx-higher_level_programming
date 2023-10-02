@@ -1,0 +1,45 @@
+	"""
+
+		A set of tests to check the function add_integer
+
+	"""
+	--------------------------- TESTING INT ~ FLOAT----------------------------
+	---------------------------------------------------------------------------
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(2, 2)
+	4
+
+	>>> add_integer(-2, 10)
+	8
+
+	>>> add_integer(3.70, 10)
+	13
+
+	>>>add_integer(77777777, 100000000)
+	177777777
+	
+	--------------------------- TESTING INT ~ STR------------------------------
+        ---------------------------------------------------------------------------
+	
+	>>> add_integer(2, "2")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer("2", 2)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	----------------------------------------------------------------------------
+
+	"""
+
+		end of tests
+
+	"""
