@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 import unittest
-"""
-Module to find the max integer in a list
+"""Module to find the max integer in a list
 """
 
 max_integer = __import__('6-max_integer').max_integer
 
 class Test_method(unittest.TestCase):
     """unittest class"""
-
     def test_max_end(self):
         test = max_integer([1, 4, 8, 10])
         self.assertEqual(test, 10)
