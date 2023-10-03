@@ -3,7 +3,7 @@
 
 
 def matrix_divided(matrix, div):
-	"""
+    """
     Function that performs devision of a matrix.
 
     Returns :
@@ -14,19 +14,31 @@ def matrix_divided(matrix, div):
         TypeError in case the rows of the matrix are not the same size
         TypeError in case div is not int nor float
         ZeroDivisionError in case the div is equals to zero
-    	"""
-    new_matrix = []
-    	for row in matrix:
-    		for element in row:
-			if not isinstance(element, (int, float)):
-				raise TypeError("matrix must be a matrix (list of lists) "
-						"of integers/floats")
-	if len(row
+    """
+    if not isinstance(matrix, list):
+        raise TypeError("matrix must be a matrix (list of lists) "
+                        "of integers/floats")
+    for row in matrix:
+        if not isinstance(row, list):
+            raise TypeError("matrix must be a matrix (list of lists) "
+                            "of integers/floats")
 
-    	for row in matrix:
-        	new_row = []
-        	for element in row:
-            		new_element = element / div
-            		new_row.append(new_element)
-        		new_matrix.append(new_row)
-    	return new_matrix
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if not isinstance(matrix[i][j], (int, float)):
+                raise TypeError("matrix must be a matrix (list of lists) "
+                                "of integers/floats")
+        if i < len(matrix) - 1 and len(matrix[i]) != len(matrix[i + 1]):
+            raise TypeError("Each row of the matrix must have the same size")
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_list = []
+        for j in range(len(matrix[i])):
+            division = round(matrix[i][j] / div, 2)
+            new_list.append(division)
+        new_matrix.append(new_list)
+    return new_matrix
