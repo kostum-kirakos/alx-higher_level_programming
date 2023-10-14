@@ -83,12 +83,21 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+	    """method"""
 	    return (self.__width * self.__height)
 
     def display(self):
+	    """display method"""
 	    for row in range(self.__height):
 		    print("{}".format(self.__width * '#'))
 
     def __str__(self):
-            string = "[{}] ({}) {}/{} - {}/{}".format((self.__class__.__name__), (self.id), (self.__x), (self.__y), (self.__width), (self.__height))
-	    return string
+	"""__str__ method"""
+	w = self.__width
+	h = self.__height
+	x = self.__x
+	y = self.__y
+	rec = self.__class__.__name__
+	i = self.id
+	string = "[{}] ({}) {}/{} - {}/{}".format(rec, i, x, y, w, h)
+	return string
