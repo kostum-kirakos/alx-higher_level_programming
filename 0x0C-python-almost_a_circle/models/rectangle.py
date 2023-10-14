@@ -87,9 +87,9 @@ class Rectangle(Base):
 	    return (self.__width * self.__height)
 
     def display(self):
-	"""display method"""
-	if self.__y > 0:
-	    print("{}".format((self.__y - 1) * '\n'))
+        """display method"""
+        if self.__y > 0:
+            print("{}".format((self.__y - 1) * '\n'))
         if self.__y == 0:
             pass
         for row in range(self.__height):
