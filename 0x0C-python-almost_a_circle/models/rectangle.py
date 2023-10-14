@@ -92,7 +92,7 @@ class Rectangle(Base):
 		    print("{}".format(self.__width * '#'))
 
     def __str__(self):
-	"""__str__ method"""
+        """__str__ method"""
 	w = self.__width
 	h = self.__height
 	x = self.__x
