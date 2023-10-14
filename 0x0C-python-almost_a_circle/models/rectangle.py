@@ -88,8 +88,12 @@ class Rectangle(Base):
 
     def display(self):
 	    """display method"""
-	    for row in range(self.__height):
-		    print("{}".format(self.__width * '#'))
+        if self.__y > 0:
+            print("{}".format((self.__y - 1) * '\n'))
+        if self.__y == 0:
+            pass
+        for row in range(self.__height):
+            print("{}{}".format(self.__x * ' ', self.__width * '#'))
 
     def __str__(self):
         """__str__ method"""
