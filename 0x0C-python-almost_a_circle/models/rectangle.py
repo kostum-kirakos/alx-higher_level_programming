@@ -93,11 +93,11 @@ class Rectangle(Base):
 
     def __str__(self):
         """__str__ method"""
-	w = self.__width
-	h = self.__height
-	x = self.__x
-	y = self.__y
-	rec = self.__class__.__name__
-	i = self.id
-	string = "[{}] ({}) {}/{} - {}/{}".format(rec, i, x, y, w, h)
-	return string
+        w = self.__width
+        h = self.__height
+        x = self.__x
+        y = self.__y
+        rec = self.__class__.__name__
+        i = self.id
+        string = "[{}] ({}) {}/{} - {}/{}".format(rec, i, x, y, w, h)
+        return string
