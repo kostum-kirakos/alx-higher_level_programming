@@ -106,7 +106,7 @@ class Rectangle(Base):
         string = "[{}] ({}) {}/{} - {}/{}".format(rec, i, x, y, w, h)
         return string
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update_method"""    
         attribute_names = ['id', 'width', 'height', 'x', 'y']
         if args:
