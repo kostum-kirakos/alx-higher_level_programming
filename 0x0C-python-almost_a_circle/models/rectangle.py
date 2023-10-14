@@ -88,3 +88,7 @@ class Rectangle(Base):
     def display(self):
 	    for row in range(self.__height):
 		    print("{}".format(self.__width * '#'))
+
+        def __str__(self):
+            string = "[{}] ({}) {}/{} - {}/{}".format((self.__class__.__name__), (self.id), (self.__x), (self.__y), (self.__width), (self.__height))
+	    return string
