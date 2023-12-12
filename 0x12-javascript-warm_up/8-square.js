@@ -5,7 +5,7 @@ if (+(argc[2])) {
   while (index < (+(argc[2]))) {
     let index2 = 0;
     while (index2 < (+(argc[2]))) {
-      process.stdout.write('x');
+      process.stdout.write('X');
       index2++;
     }
     index++;
