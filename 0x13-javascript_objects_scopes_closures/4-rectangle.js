@@ -17,19 +17,20 @@ class Rectangle {
       }
     }
   }
-  rotate() {
-	  if (this.width && this.height) {
-		  let temp;
-		  temp = this.width;
-		  this.width = this.height;
-		  this.height = temp;
-	  }
+
+  rotate () {
+    if (this.width && this.height) {
+      const temp = this.width;
+      this.width = this.height;
+      this.height = temp;
+    }
   }
-  double() {
-	  if (this.width && this.height) {
-		  this.width = this.width * 2;
-		  this.height = this.height * 2;
-	  }
+
+  double () {
+    if (this.width && this.height) {
+      this.width = this.width * 2;
+      this.height = this.height * 2;
+    }
   }
 }
 module.exports = Rectangle;
