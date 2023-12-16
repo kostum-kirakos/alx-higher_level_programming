@@ -15,6 +15,6 @@ if __name__ == "__main__":
     session = Session()
 
     for st in session.query(State).order_by(State.id):
-        if st.id == 2 :
+        if st.id == 2:
             st.name = 'New Mexico'
     session.commit()
