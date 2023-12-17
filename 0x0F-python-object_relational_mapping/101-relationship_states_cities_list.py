@@ -1,16 +1,23 @@
 #!/usr/bin/python3
-# Class definition of a State and an instance relationship
+# script that lists all State objects from the database hbtn_0e_6_usa
+# # Sintax: ./100-relationship_states_cities.py username password database_name
+# state_name_to_search
+# Used module sqlalchemy
 
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-from relationship_city import Base, City
+import sys
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from relationship_city import City
+from relationship_state import State
 
+if __name__ == "__main__":
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-class State(Base):
-    """Represents a state for database"""
-    __tablename__ = "states"
-    id = Column(Integer, primary_key=True)
-    name = Column(String(128), nullable=False)
-
-    cities = relationship("City", backref="state", cascade="all, delete")
+    for state in session.query(State).order_by(State.id):
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("    {}: {}".format(city.id, city.name))
