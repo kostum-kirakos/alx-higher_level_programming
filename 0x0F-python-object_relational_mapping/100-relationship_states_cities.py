@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-# script that lists all State objects from the database hbtn_0e_6_usa
-# # Sintax: ./100-relationship_states_cities.py username password database_name
-# state_name_to_search
-# Used module sqlalchemy
 
 import sys
 from sqlalchemy import create_engine
