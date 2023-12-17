@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# Class definition of a State and an instance relationship
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
