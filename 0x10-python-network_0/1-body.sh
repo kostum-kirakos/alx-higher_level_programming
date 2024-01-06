@@ -5,4 +5,4 @@ if [ -z "$1" ]; then
 	exit 1
 fi
 
-curl -s "$1"
+curl -s GET "$1"
