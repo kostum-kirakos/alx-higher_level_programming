@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def find_peak(list_of_integers):
     """A function that returns the peak"""
     if list_of_integers:
